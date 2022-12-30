@@ -20,7 +20,7 @@ export default forwardRef(function TextInput(
                 id={id}
                 value={value}
                 className={
-                    `border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm ` +
+                    `text-gray-700 leading-tight rounded-xl border-0 outline-none focus:outline-none focus:ring-2 focus:ring-cyanblue-300 focus:ring-offset-2 transition ease-in-out duration-150 ` +
                     className
                 }
                 ref={input}
