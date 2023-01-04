@@ -21,6 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rg',
+        'cpf',
+        'phone',
+        'address',
+        'date_of_birth',
     ];
 
     /**
@@ -41,4 +46,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+   /**
+    * Get all of the appointments for the User
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+   public function appointments()
+   {
+       return $this->hasMany(appointments::class);
+   }
 }
