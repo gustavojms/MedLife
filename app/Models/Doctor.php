@@ -14,7 +14,7 @@ class Doctor extends Model
         'name',
         'email',
         'password',
-        'crm',
+        'cpf',
         'phone',
     ];
 

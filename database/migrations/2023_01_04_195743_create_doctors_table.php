@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->foreignId('speciality_id');
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('cpf');
+            $table->date('date_of_birth');
             $table->string('password');
-            $table->string('crm');
-            $table->string('phone');
+            $table->rememberToken();
+            $table->timestamps();   
         });
     }
 

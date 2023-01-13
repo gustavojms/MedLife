@@ -36,6 +36,7 @@ export default function Login({ status, canResetPassword }) {
 
         <div className="flex h-screen overflow-hidden">
             <Head title="Entrar" />
+            {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
             <div className="w-1/2 bg-blue-500 bg-gradient-to-r from-cyanblue-600 via-cyanblue-500 to-cyanblue-400">
                 <div className="flex items-center justify-center h-full">
                     <div className="text-center py-8">
@@ -51,30 +52,55 @@ export default function Login({ status, canResetPassword }) {
             </div>
             <div className="w-1/2 py-8 bg-graylight-500">
                 <div className="flex justify-end mr-8">
-                    <SecondaryButton>
-                        Cadastrar
-                    </SecondaryButton>
+                    <NavLink href="/register" >
+                        <SecondaryButton>
+                            Cadastrar
+                        </SecondaryButton>           
+                    </NavLink>                   
                 </div>
                 <div className="flex items-center justify-center h-full">
                     <div className="text-center py-8 w-96">
                         <h2 className="text-2xl font-bold">Entrar</h2>
-                        <form className="mx-auto py-8">
-                            <InputLabel htmlFor="email">
-                                Email
-                            </InputLabel>
-                            <TextInput type="email" className="w-full h-10"/>
-                            <InputLabel htmlFor="senha">
-                                Senha
-                            </InputLabel>
-                            <TextInput type="password" className="mb-6 w-full h-10"/>
-                            <NavLink href="#" className='text-left float-left'>
+                        <form className="mx-auto py-8" onSubmit={submit}>
+                            <InputLabel forInput="email" value="Email" /> 
+                            
+                            <TextInput
+                                id="email"
+                                type="email"
+                                name="email"
+                                value={data.email}
+                                className="mt-1 block w-full"
+                                autoComplete="username"
+                                isFocused={true}
+                                handleChange={onHandleChange}
+                            />
+
+                            <InputError message={errors.email} className="mt-2" />
+                            <InputLabel forInput="password" value="Password" />
+                            
+                            <TextInput
+                                id="password"
+                                type="password"
+                                name="password"
+                                value={data.password}
+                                className="mt-1 block w-full"
+                                autoComplete="current-password"
+                                handleChange={onHandleChange}
+                            />
+
+                            <NavLink href="/register" className='text-left float-left'>
                                 Não possui cadastro? Clique aqui
                             </NavLink>
-                            <NavLink href="#" className="text-right float-right">
-                                Esqueceu sua senha?
-                            </NavLink>
+                            {canResetPassword && (
+                                <NavLink
+                                href={route('password.request')}
+                                className="text-right float-right"
+                                >                                
+                                    Esqueceu sua senha?  
+                                </NavLink>
+                            )}
                             
-                            <PrimaryButton className='w-full h-10 mt-4 py-2 px-3'>
+                            <PrimaryButton className='w-full h-10 mt-4 py-2 px-3' processing={processing}>
                                 Entrar
                             </PrimaryButton>
                         </form>
