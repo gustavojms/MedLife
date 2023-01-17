@@ -9,6 +9,11 @@ import InputLabel from '@/Components/InputLabel';
 import TextInput from '@/Components/TextInput';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
+import homeIcon from '../../../public/home.svg';
+import calendaryIcon from '../../../public/calendary.svg';
+import appointmentIcon from '../../../public/appointment.svg';
+import profileIcon from '../../../public/user.svg'
+
 export default function Authenticated({ auth, header, children }) {
     // const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -130,27 +135,36 @@ export default function Authenticated({ auth, header, children }) {
 
         <div className="flex h-screen overflow-hidden">
             <div className="w-1/6 bg-blue-500 bg-gradient-to-r from-cyanblue-600 via-cyanblue-500 to-cyanblue-400">
-                <div className="flex items-start justify-center h-full">                  
+                <div className="flex items-start justify-center h-full">
+                                      
                     <div className="text-left py-20 ">
                         <Link>
+                            <div className='text-white focus:shadow-inner'>
+                                <img className="inline-block" src={profileIcon} alt="" />
+                            </div>
+                        </Link>
+                        <Link>
                             <div className=' text-white my-5 mt-20 focus:shadow-inner'>
+                                <img className="inline-block mr-5" src={homeIcon} alt="" />
                                 Pagina Inicial
                             </div>
                         </Link>
                         <Link>
                             <div className=' text-white my-5 '>
+                            <img className="inline-block mr-5" src={calendaryIcon} alt="" />
                                 Calendário
                             </div>
                         </Link>
                         <Link>
                             <div className=' text-white my-5 '>
-                                Marcar consulta
+                                <img  className="inline-block mr-5" src={appointmentIcon} alt="" />                                
+                                Marcar consulta                               
                             </div>
                         </Link>
                     </div>
                 </div>
             </div>
-            
+            {/* <main>{children}</main> */}
         </div>
     );
 }

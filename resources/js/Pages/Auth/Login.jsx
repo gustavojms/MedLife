@@ -9,6 +9,11 @@ import TextInput from '@/Components/TextInput';
 import NavLink from '@/Components/NavLink';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
+import calendaryIcon from '../../../../public/callog.svg';
+import diagnosticIcon from '../../../../public/hellog.svg';
+import disponibilityIcon from '../../../../public/displog.svg';
+import modifyIcon from '../../../../public/modiflog.svg';
+
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
@@ -39,13 +44,27 @@ export default function Login({ status, canResetPassword }) {
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
             <div className="w-1/2 bg-blue-500 bg-gradient-to-r from-cyanblue-600 via-cyanblue-500 to-cyanblue-400">
                 <div className="flex items-center justify-center h-full">
+                    
                     <div className="text-center py-8">
-                        <h1 className="text-white text-4xl font-bold mb-4 text-left">MedLife</h1>
+                        <h1 className="text-white text-4xl font-bold mb-20 text-left">MedLife</h1>
                         <ul className="text-white text-left">
-                            <li>Marque sua consulta rapidamente</li>
-                            <li>Acompanhe seu diagnóstico</li>
-                            <li>Visualize a disponibilidade do seu médico</li>
-                            <li>Facilidade para modificar seus atendimentos</li>
+                            <div>
+                                <img className='inline-block mr-3' src={calendaryIcon} alt="" />
+                                <li className='inline-block'>Marque sua consulta rapidamente</li>
+                            </div>
+                            <div>
+                                <img className='mr-3 inline-block' src={diagnosticIcon} alt="" />
+                                <li className='inline-block'>Acompanhe seu diagnóstico</li>
+                            </div>
+                            <div>
+                                <img className='mr-3 inline-block' src={disponibilityIcon} alt="" />
+                                <li className='inline-block'>Visualize a disponibilidade do seu médico</li>
+                            </div>
+                            <div>
+                                <img className='mr-3 inline-block' src={modifyIcon} alt="" />
+                                <li className='inline-block'>Facilidade para modificar seus atendimentos</li>
+                            </div>
+                            
                         </ul>
                     </div>
                 </div>
@@ -88,13 +107,13 @@ export default function Login({ status, canResetPassword }) {
                                 handleChange={onHandleChange}
                             />
 
-                            <NavLink href="/register" className='text-left float-left'>
+                            <NavLink href="/register" className='text-left float-left mt-2'>
                                 Não possui cadastro? Clique aqui
                             </NavLink>
                             {canResetPassword && (
                                 <NavLink
                                 href={route('password.request')}
-                                className="text-right float-right"
+                                className="text-right float-right mt-2"
                                 >                                
                                     Esqueceu sua senha?  
                                 </NavLink>
