@@ -17,7 +17,10 @@ class AppointmentFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'doctor_id'=>1,
+            'user_id'=>1,
+            'date'=>fake()->date(),
+            'observations'=> fake()->text()
         ];
     }
 }

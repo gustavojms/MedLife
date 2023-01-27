@@ -1,7 +1,7 @@
 export default function InfoCard() {
     return (
 
-        <div className="grid grid-cols-1 justify-center content-center rounded-xl">
+        <div className="h-screen grid grid-cols-1 justify-center content-center rounded-xl">
             <div className="p-4">
                 <div className="flex justify-center p-2">
                     <h1>

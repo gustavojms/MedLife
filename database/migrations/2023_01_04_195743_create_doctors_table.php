@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('cpf');
             $table->date('date_of_birth');
             $table->string('password');
+            $table->string('phone');
+            $table->foreignId('speciality_id');
             $table->rememberToken();
             $table->timestamps();   
         });
