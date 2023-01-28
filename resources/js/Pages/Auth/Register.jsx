@@ -147,7 +147,7 @@ export default function Register() {
 
                             <TextInput
                                 id="date_of_birth"
-                                type="text"
+                                type="date"
                                 name="date_of_birth"
                                 value={data.date_of_birth}
                                 className="mt-1 block w-full"
