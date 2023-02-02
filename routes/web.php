@@ -37,9 +37,9 @@ Route::get('/marcar', function () {
 })->middleware(['auth', 'verified'])->name('marcar');
 
 
-Route::get('/calendario', function () {
-    return Inertia::render('Calendario');
-})->middleware(['auth', 'verified'])->name('calendario');
+Route::get('/historico', function () {
+    return Inertia::render('Historico');
+})->middleware(['auth', 'verified'])->name('historico');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

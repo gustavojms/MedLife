@@ -28,7 +28,7 @@ export default function Authenticated({ auth, header, children }) {
                             
                             <Dropdown.Trigger>
                                 <span className="inline-flex rounded-md">
-                                    <div className='text-white focus:shadow-inner'>
+                                    <div className='text-white focus:shadow-inner hover:cursor-pointer'>
                                         <img className="inline-block" src={profileIcon} alt="" />
                                     </div>      
                                 </span>
@@ -49,16 +49,16 @@ export default function Authenticated({ auth, header, children }) {
                                 Pagina Inicial
                             </div>
                         </Link>
-                        <Link href='calendario'>
-                            <div className=' text-white my-5 '>
-                            <img className="inline-block mr-5" src={calendaryIcon} alt="" />
-                                Calendário
-                            </div>
-                        </Link>
                         <Link href='marcar'>
                             <div className=' text-white my-5 '>
-                                <img  className="inline-block mr-5" src={appointmentIcon} alt="" />                                
+                            <img className="inline-block mr-5" src={appointmentIcon} alt="" />
                                 Marcar consulta                               
+                            </div>
+                        </Link>
+                        <Link href='historico'>
+                            <div className=' text-white my-5 '>
+                                <img  className="inline-block mr-5" src={calendaryIcon} alt="" />                                
+                                Histórico de consulta
                             </div>
                         </Link>
                     </div>
