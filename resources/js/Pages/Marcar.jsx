@@ -27,23 +27,30 @@ export default function Marcar(props){
             {/* <Head title="Marcar" /> */}
   
             <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div className="w-3/4 mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">  
                             <form name="createForm" onSubmit={handleSubmit}>
                                 <div className="flex flex-col">
                                     <div className="mb-4">
                                         <label className="">Médico</label>
-                                        <input
-                                            type="number"
-                                            className="w-full px-4 py-2"
-                                            label="Doctor"
-                                            name="doctor"
-                                            value={data.doctor_id}
-                                            onChange={(e) =>
-                                                setData("doctor_id", e.target.value)
-                                            }
-                                        />
+                                        <select name="doctor" 
+                                        id="doctor" 
+                                        className="w-full px-4 py-2 rounded"
+                                        onChange={(e) =>
+                                        setData("doctor_id", e.target.value)}
+                                        value={data.doctor_id}
+                                        >
+                                            <option value=""></option>
+                                            <option value="1">Dr. Antonio - Vida e Imagem</option>
+                                            <option value="2">Dra. Angela - Clínica da Mulher</option>
+                                            <option value="3">Dr. Pedro - Sorriso Feliz</option>
+                                            <option value="4">Dr. Carlos - Cerpe</option>
+                                            <option value="5">Dra. Patricia - Saúde para você</option>
+                                            <option value="6">Dra. Rosa - Denticia</option>
+                                            <option value="7">Dr. Marcos - Ortopédico</option>
+                                        </select>
+                                        
                                         <span className="text-red-600">
                                             {errors.doctor_id}
                                         </span>
@@ -66,10 +73,10 @@ export default function Marcar(props){
                                         </span>
                                     </div>
                                     <div className="mt-4">
-                                        <label className="">Observations</label>
+                                        <label className="">Observações</label>
                                         <textarea
                                             type="text"
-                                            className="w-full rounded"
+                                            className="w-full rounded resize-none p-8"
                                             label="observations"
                                             name="observations"
                                             errors={errors.observations}
@@ -77,6 +84,7 @@ export default function Marcar(props){
                                             onChange={(e) =>
                                                 setData("observations", e.target.value)
                                             }
+                                            placeholder="Descreva como se sente..."
                                         />
                                         <span className="text-red-600">
                                             {errors.observations}
@@ -84,12 +92,12 @@ export default function Marcar(props){
                                     </div>
                                 </div>
                                 
-                                <div className="mt-4">
+                                <div className="mt-4 flex justify-center">
                                     <button
                                         type="submit"
-                                        className="px-6 py-2 font-bold text-white bg-green-500 rounded"
+                                        className="px-6 py-2 text-white bg-cyanblue-400 rounded"
                                     >
-                                        Save
+                                        Marcar
                                     </button>
                                 </div>
                             </form>
