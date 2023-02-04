@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -38,7 +39,9 @@ Route::get('/marcar', function () {
 
 
 Route::get('/historico', function () {
-    return Inertia::render('Historico');
+    return Inertia::render('Historico',[
+        'appointments' => Auth::user()->appointments
+    ]);
 })->middleware(['auth', 'verified'])->name('historico');
 
 Route::middleware('auth')->group(function () {

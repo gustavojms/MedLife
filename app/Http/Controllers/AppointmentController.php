@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Appointment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
@@ -16,8 +17,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointment = Appointment::all();
-        return Inertia::render('Appointment/Index',['appointments' => $appointment]);
+        //
     }
 
     /**
@@ -27,7 +27,7 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Appointment/Create');
+
     }
 
     /**
@@ -38,17 +38,13 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        Validator::make($request->all(), [
-            'doctor_id' => ['required'],
-            'user_id' => ['required'],
-            'date' => ['required'],
-            'observations' => ['required'],
-            
-        ])->validate();
-
-        Appointment::create($request->all());
-
-        return redirect()->route('marcar');
+        Appointment::create([
+            'date' => $request->date,
+            'observations' => $request->observations,
+            'user_id' => Auth::user()->id,
+            'doctor_id' => $request->doctor_id,
+        ]);
+        return redirect('historico');
     }
 
     /**
@@ -70,7 +66,9 @@ class AppointmentController extends Controller
      */
     public function edit(Appointment $appointment)
     {
-        return Inertia::render('Appointment/Edit', ['appointments' => $appointment]);
+        return Inertia::render('Edit', [
+            'appointment' => $appointment
+        ]);
     }
 
     /**
@@ -80,17 +78,14 @@ class AppointmentController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request, Appointment $appointment)
+    public function update( Request $request, Appointment $appointment)
     {
-        Validator::make($request->all(), [
-            'doctor_id' => ['required'],
-            'user_id' => ['required'],
-            'date' => ['required'],
-            'observations' => ['required'],
-        ])->validate();
+        $appointment->date = $request->date;
+        $appointment->observations = $request->observations;
+        $appointment->doctor_id = $request->doctor_id;
+        $appointment->save();
 
-        Appointment::find($id)->update($request->all());
-        return redirect()->route('appointments.index');
+        return redirect('/calendario');
     }
 
     /**
@@ -99,9 +94,8 @@ class AppointmentController extends Controller
      * @param  \App\Models\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Appointment $appointment)
     {
-        Appointment::find($id)->delete();
-        return redirect()->route('appointments.index');
+        $appointment->delete();
     }
 }

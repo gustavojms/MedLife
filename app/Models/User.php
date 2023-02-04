@@ -53,6 +53,6 @@ class User extends Authenticatable
     */
    public function appointments()
    {
-       return $this->hasMany(appointments::class);
+       return $this->hasMany(Appointment::class);
    }
 }
