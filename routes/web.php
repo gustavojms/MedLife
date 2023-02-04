@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,7 @@ Route::get('/', function () {
 });
 
 Route::resource('appointments', AppointmentController::class);
+Route::resource('doctors', DoctorController::class);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

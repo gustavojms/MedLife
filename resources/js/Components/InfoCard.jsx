@@ -4,7 +4,7 @@ export default function InfoCard() {
         <div className="h-screen grid grid-cols-1 justify-center content-center rounded-xl">
             <div className="p-4">
                 <div className="flex justify-center p-2">
-                    <h1>
+                    <h1 className="text-4xl font-bold text-cyanblue-400">
                         Consultórios
                     </h1>
                 </div>

@@ -11,7 +11,7 @@ export default function Marcar(props){
     }
 
     const { data, setData, errors, post } = useForm({
-        user_id:1,
+        user_id:"",
         doctor_id: "",
         date: "",
         observations: "",
