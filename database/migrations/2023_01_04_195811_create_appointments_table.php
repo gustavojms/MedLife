@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('doctor_id');
             $table->date('date');
+            $table->time('time');
             $table->text('observations');
             $table->timestamps();
         });

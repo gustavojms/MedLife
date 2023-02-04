@@ -43,6 +43,7 @@ class AppointmentController extends Controller
             'observations' => $request->observations,
             'user_id' => Auth::user()->id,
             'doctor_id' => $request->doctor_id,
+            'time' => $request->time,
         ]);
         return redirect('historico');
     }
@@ -83,6 +84,7 @@ class AppointmentController extends Controller
         $appointment->date = $request->date;
         $appointment->observations = $request->observations;
         $appointment->doctor_id = $request->doctor_id;
+        $appointment->time = $request->time;
         $appointment->save();
 
         return redirect('/calendario');

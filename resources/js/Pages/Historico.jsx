@@ -35,6 +35,7 @@ export default function Historico() {
                             <th className="px-4 py-2">Hora</th>
                             <th className="px-4 py-2">Médico</th>
                             <th className="px-4 py-2">Consultório</th>
+                            <th className="px-4 py-2">Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,7 @@ export default function Historico() {
                                 <td className="border px-4 py-2">{ time }</td>
                                 <td className="border px-4 py-2">{ doctors [doctor_id] }</td>
                                 <td className="border px-4 py-2">{ consultory_doctors [doctor_id] }</td>
+                                <td className="border px-4 py-2 bg-red-500">Pendente</td>
                             </tr>
                         ))}
 

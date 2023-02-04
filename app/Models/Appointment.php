@@ -15,9 +15,10 @@ class Appointment extends Model
         'user_id',
         'date',
         'observations',
+        'time'
     ];
 
-
+    
     /**
      * Get the user that owns the Appointment
      *

@@ -15,6 +15,7 @@ export default function Marcar(props){
         doctor_id: "",
         date: "",
         observations: "",
+        time: "",
     });
 
 
@@ -41,7 +42,7 @@ export default function Marcar(props){
                                         setData("doctor_id", e.target.value)}
                                         value={data.doctor_id}
                                         >
-                                            <option value=""></option>
+                                            <option value="">Selecione</option>
                                             <option value="1">Dr. Antonio - Vida e Imagem</option>
                                             <option value="2">Dra. Angela - Clínica da Mulher</option>
                                             <option value="3">Dr. Pedro - Sorriso Feliz</option>
@@ -55,7 +56,7 @@ export default function Marcar(props){
                                             {errors.doctor_id}
                                         </span>
                                     </div>
-                                    <div className="mb-0">
+                                    <div className="mb-4">
                                         <label className="">Data</label>
                                         <input
                                             type="date"
@@ -70,6 +71,29 @@ export default function Marcar(props){
                                         />
                                         <span className="text-red-600">
                                             {errors.date}
+                                        </span>
+                                    </div>
+                                    <div className="mb-4">
+                                        <label className="">Horário</label>
+                                        <select name="time" 
+                                        id="time" 
+                                        className="w-full  rounded"
+                                        onChange={(e) =>
+                                        setData("time", e.target.value)}
+                                        value={data.time}
+                                        >
+                                            <option value="">Selecione</option>
+                                            <option value={"08:00"}>08:00</option>
+                                            <option value={"10:00"}>10:00</option>
+                                            <option value={"13:00"}>13:00</option>
+                                            <option value={"14:00"}>14:00</option>
+                                            <option value={"15:00"}>15:00</option>
+                                            <option value={"09:00"}>09:00</option>
+                                            <option value={"11:00"}>11:00</option>
+                                        </select>
+                                        
+                                        <span className="text-red-600">
+                                            {errors.time}
                                         </span>
                                     </div>
                                     <div className="mt-4">
