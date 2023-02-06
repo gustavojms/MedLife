@@ -8,8 +8,8 @@ export default function InfoCard() {
                         Consultórios
                     </h1>
                 </div>
-
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                    <br/>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Vida e Imagem</h1>
                     </div>
@@ -18,7 +18,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Clínica da Mulher</h1>
                     </div>
@@ -27,7 +27,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Sorriso Feliz</h1>
                     </div>
@@ -36,7 +36,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Cerpe</h1>
                     </div>
@@ -45,7 +45,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Saúde para você</h1>
                     </div>
@@ -54,7 +54,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Denticia</h1>
                     </div>
@@ -63,7 +63,7 @@ export default function InfoCard() {
                     </div>
                 </div>
 
-                <div className='flex border border-graylight-400 rounded p-2 mb-4'>
+                <div className='flex border b rounded p-2 mb-4 Large shadow'>
                     <div className='flex-1'>
                         <h1>Ortopédico</h1>
                     </div>
